@@ -20,8 +20,9 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: |
-            windows-latest
-            macOS-latest
+            windows/amd64
+            windows/arm64
+            darwin/amd64
           push: true
           tags: satheendra/flaskapp:latest
           dockerfile: Dockerfile
