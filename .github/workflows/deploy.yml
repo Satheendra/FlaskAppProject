@@ -25,4 +25,4 @@ jobs:
           context: .
           file: ./Dockerfile  # Adjust the path to your Dockerfile if needed
           push: true
-          tags: satheendra/flaskappproject:latest  # Adjust the repository and tag as needed
+          tags: satheendral/flaskappproject:latest  # Adjust the repository and tag as needed
