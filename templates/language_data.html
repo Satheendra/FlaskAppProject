@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Data</title>
+</head>
+<body>
+    <h1>Language Data for {{ lang_name }}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Quarter</th>
+                <th>Repo Count</th>
+                <th>PRs Count</th>
+                <th>Issues Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in language_data %}
+            <tr>
+                <td>{{ data[1] }}</td>
+                <td>{{ data[2] }}</td>
+                <td>{{ data[3] }}</td>
+                <td>{{ data[4] }}</td>
+                <td>{{ data[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
