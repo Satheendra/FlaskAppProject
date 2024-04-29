@@ -1,9 +1,8 @@
-name: Deploy to Docker Hub
+name: Deploy Flask App to Docker Hub
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
@@ -21,14 +20,12 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: |
-            windows/amd64
-            windows/arm64
-            darwin/amd64
+            windows-latest
+            macOS-latest
           push: true
           tags: satheendra/flaskapp:latest
           dockerfile: Dockerfile
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
-          secrets:
-            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-            DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+          secrets: |
+            ${{ toJson(secrets) }}
