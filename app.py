@@ -62,3 +62,5 @@ def get_language_data():
 if __name__ == '__main__':
     # Run the Flask app on port 5000
     app.run(debug=True)
+
+# end of code - commit test comment for github actions
